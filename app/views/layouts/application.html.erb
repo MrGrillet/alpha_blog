@@ -9,10 +9,11 @@
   </head>
 
   <body>
-  	<%= link_to 'Home', root_path %>
-    <%= link_to 'About', about_path %>
-  	<%= link_to 'Articles', articles_path %>
+    <%= render 'layouts/navigation' %>
     <%= render 'layouts/messages' %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
