@@ -9,6 +9,8 @@
   </head>
 
   <body>
+  	<%= link_to 'home', root_path %>
+  	<%= link_to 'articles', articles_path %>
   	<% flash.each do |name, msg|  %>
   	<ul>
   		<li><%= msg %></li>
