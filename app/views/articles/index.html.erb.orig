@@ -6,9 +6,16 @@
 			</div>
 			<div class="articles-description">
 				<%= truncate(article.description, length: 160) %>
+<<<<<<< HEAD
+				<div class="article-meta-details">	
+					<small>Created by <%= article.user.username if article.user %>
+						<%= time_ago_in_words(article.created_at) %> ago. 
+						last updated <%= time_ago_in_words(article.updated_at) %>
+=======
 				<div class="article-meta">
 					<small>
 						Created by <%= article.user.username if article.user %>, <%= time_ago_in_words(article.created_at) %> ago.
+>>>>>>> recuemission
 					</small>
 				</div>
 				<div class="articles-contol">
