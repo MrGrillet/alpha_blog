@@ -10,9 +10,11 @@
 					Created by <%= article.user.username if article.user %>, <%= time_ago_in_words(article.created_at) %> ago.
 				</small>
 			</div>
-			<div class="articles-contol">
-				<%= link_to 'Read', article_path(article) %> | <%= link_to 'Edit this article', edit_article_path(article) %>
-			</div>
+			<% if logged_in? && current_user == article.user %>
+				<div class="articles-contol">
+					<%= link_to 'Read', article_path(article) %> | <%= link_to 'Edit this article', edit_article_path(article) %>
+				</div>
+			<% end %>
 		</div>
 	</div>
 <% end %>

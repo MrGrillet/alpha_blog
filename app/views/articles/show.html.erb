@@ -2,7 +2,13 @@
 <h2><%= @article.title %></h2>
 <p><%= simple_format(@article.description) %></p>
 
-<%= link_to 'Edit this article', edit_article_path(@article) %> | <%= link_to 'Back to articles', articles_path %> | <%= link_to 'Delete this article', article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back to articles', articles_path, class: "btn btn-primary" %>
+
+<% if logged_in? && current_user == @article.user %>
+	<div class="articles-contol">	
+		<%= link_to 'Edit this article', edit_article_path(@article) %> | <%= link_to 'Delete this article', article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } %>
+	</div>
+<% end %>
 
 <% if @article.user %>
 	<ul class="listing">
@@ -11,6 +17,7 @@
 			<li><%= link_to gravatar_for(@article.user), user_path(@article.user) %> </li>
 			<li class="article-title">This article is by: <%= link_to @article.user.username, user_path(@article.user) %></li>
 					
-		</div>		
+		</div>	
+
 	</ul>
 <% end %>
