@@ -1,9 +1,8 @@
 require 'test_helper'
 
-class CategoriesControllerTest <ActionDispatch::IntegrationTest
+class CategoriesControllerTest < ActionDispatch::IntegrationTest
 	
 	def setup
-		@category = Category.create(name: "Sports")
 		@user = User.create( username: "John", email: "john@gmail.com", password: "newpass", admin: true )
 	end
 
@@ -13,7 +12,6 @@ class CategoriesControllerTest <ActionDispatch::IntegrationTest
 	end
 
 	test "should get new" do
-		sign_in_as(@user, "password")
 		get new_category_path
 		assert_response :success
 	end
@@ -29,4 +27,5 @@ class CategoriesControllerTest <ActionDispatch::IntegrationTest
 		end
 		assert_redirected_to categories_path
 	end
+
 end

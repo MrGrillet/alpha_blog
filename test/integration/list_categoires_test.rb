@@ -6,6 +6,7 @@ class CreateCategoriesListTest < ActionDispatch::IntegrationTest
 		@category = Category.create(name: "Sports")
 		@category2 = Category.create(name: "Programming")
 	end
+	
 	test "should show categories listing" do
 		get categories_path
 		assert_template 'categories/index'
