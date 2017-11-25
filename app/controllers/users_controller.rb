@@ -14,8 +14,8 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
-			flash[:success] = "Welcome to the community"
-			redirect_to articles_path
+			flash[:success] = "Your details have been saved. Welcome to the community! Please login..."
+			redirect_to login_path
 		else
 			render 'new'
 		end
