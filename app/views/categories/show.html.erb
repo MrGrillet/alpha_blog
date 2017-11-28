@@ -1,5 +1,9 @@
 <h1><%= "Category: " + @category.name %>  </h1>
-
+<% if logged_in? and current_user.admin? %>
+	<div align="center">
+		<span class="btn"> <%= link_to "Edit Category", edit_category_path(@category) %></span> 
+	</div>
+<% end %>
 <div class="row">
 	<div align="center"><%= will_paginate @category_articles %></div>
 	<h1>All articles</h1>
