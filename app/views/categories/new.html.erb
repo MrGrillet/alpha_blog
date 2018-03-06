@@ -1,25 +1,5 @@
 <h1>Create a new category</h1>
 
-<%= render 'share/errors', obj: @category %>
 
-<%= form_for(@category, :html => {class: "form-horizontal", role: "form"})  do |f| %>
-	<div class="form-group">
-		<div class="control-label col-xs-2">
-			<label > <%= f.label :category %></label>
-		</div>
-		<div class="col-xs-10">
-			<%= f.text_field :name, class: "form-control", placeholder: "Enter a category name", autofocus: true %>
-		</div>
-	</div>
-	<div class="form-group" >
-		<div class="col-sm-8 col-sm-offset-2">
-			<%= f.submit class: 'btn btn-lg btn-primary' %>
-		</div>
-	</div>
-	<div class="form-group" >
-		<div class="col-sm-8 col-sm-offset-2">
-			<br>
-			<%= link_to "Cancel and return to articles", articles_path %>
-		</div>
-	</div>
-<% end %>
+
+<%= render 'form' %>
